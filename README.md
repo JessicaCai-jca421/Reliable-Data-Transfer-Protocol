@@ -2,7 +2,7 @@
 
 ## Description
 
-A UDP file transfer protocol provides reliability, flow control, and congestion control. It is adapted to the main components of TCP to recreate a connection-oriented and pipelined protocol for transmission between two hosts. It also provides interfaces to transfer files from server to client reliably.
+The UDP file transfer protocol provides reliability, traffic control and congestion control. It applies the main components of TCP, recreating a connection-oriented pipeline protocol for transfers between two hosts. It also provides an interface for reliable file transfer from server to client.
 
 Since we implemented multiple threads on the server side, and the Ack Listener thread shares the same local window with the Packet Sending thread, the Ack Listener thread keeps popping items out of the window, and the Packet Sending line keeps pushing objects into the windows. It is a producer-consumer synchronization problem. We used semaphore to solve this problem
 
